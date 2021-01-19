@@ -5,7 +5,7 @@ WORKDIR /opt
 RUN set -ex \
     && apt-get -qq update \
     && apt-get -qq install -y --no-install-recommends \
-        build-essential git cmake python3.6\
+        build-essential git cmake python3-dev\
     && git clone https://github.com/Tencent/ncnn.git  \
     && cd ncnn  \
     && git submodule init && git submodule update  \
