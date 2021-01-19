@@ -4,7 +4,8 @@ WORKDIR /opt/nccn/build
 
 RUN set -ex \
     && apt-get -qq update \
-    && apt-get -qq install git \
+    && apt-get -qq install -y --no-install-recommends \
+        build-essential git cmake \
     && git clone https://github.com/Tencent/ncnn.git  \
     && cd ncnn  \
     && git submodule init && git submodule update  \
