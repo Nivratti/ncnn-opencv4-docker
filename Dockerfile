@@ -12,3 +12,10 @@ RUN set -ex \
     && mkdir -p build && cd build \
     && cmake -DCMAKE_BUILD_TYPE=Release -DNCNN_VULKAN=OFF -DNCNN_PYTHON=ON -DNCNN_SYSTEM_GLSLANG=ON -DNCNN_BUILD_EXAMPLES=ON .. \
     && make -j$(nproc)
+
+
+RUN set -ex \
+	&& cd /opt/ncnn/python \
+	&& pip3 install . \
+	&& pip3 install -r requirements.txt \
+	&& python3 -c 'import ncnn; import ncnn.model_zoo as model_zoo; print(model_zoo.get_model_list())'
