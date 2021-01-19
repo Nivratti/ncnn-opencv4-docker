@@ -1,0 +1,19 @@
+
+build:
+	sudo docker build . -t YOUR_DOCKERHUB_NAME/ncnn-opencv4:latest
+
+Run:
+   sudo docker run -it YOUR_DOCKERHUB_NAME/ncnn-opencv4
+
+   or with container name
+   sudo docker run --name ncnn-opencv4 -it YOUR_DOCKERHUB_NAME/ncnn-opencv4
+
+
+
+----------------------
+
+Push
+
+# docker tag firstimage YOUR_DOCKERHUB_NAME/firstimage
+example:
+	docker tag firstimage nivrattituito/firstimage
