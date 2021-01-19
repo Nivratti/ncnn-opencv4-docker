@@ -1,11 +1,11 @@
 FROM dkimg/opencv:4.5.1-ubuntu
 
-WORKDIR /opt/nccn/build
+WORKDIR /opt
 
 RUN set -ex \
     && apt-get -qq update \
     && apt-get -qq install -y --no-install-recommends \
-        build-essential git cmake \
+        build-essential git cmake python3.6\
     && git clone https://github.com/Tencent/ncnn.git  \
     && cd ncnn  \
     && git submodule init && git submodule update  \
